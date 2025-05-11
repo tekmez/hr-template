@@ -15,3 +15,14 @@ export interface TableProps<TData> {
   data: TData[];
   onRowSelect?: (selectedRows: TData[]) => void;
 }
+
+export interface Employee {
+  id: number;
+  name: string;
+  title: string;
+  department: string;
+  email: string;
+  location: string;
+  status: string;
+  hiredAt: string;
+}

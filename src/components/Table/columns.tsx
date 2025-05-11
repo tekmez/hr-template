@@ -1,16 +1,9 @@
 import type { ColumnDef } from "@tanstack/react-table";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Button } from "@/components/ui/button";
-import { ArrowUpDown } from "lucide-react";
+import type { Employee } from "@/types/types";
+import { SortBtn } from "../sort-btn";
 
-export type Payment = {
-  id: string;
-  amount: number;
-  status: "pending" | "processing" | "success" | "failed";
-  email: string;
-};
-
-export const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<Employee>[] = [
   {
     id: "select",
     header: ({ table }) => (
@@ -41,33 +34,41 @@ export const columns: ColumnDef<Payment>[] = [
     ),
   },
   {
+    accessorKey: "name",
+    cell: ({ row }) => <div className="capitalize">{row.getValue("name")}</div>,
+    header: ({ column }) => <SortBtn column={column} label="Name" />,
+  },
+  {
+    accessorKey: "title",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("title")}</div>
+    ),
+    header: ({ column }) => <SortBtn column={column} label="Title" />,
+  },
+  {
+    accessorKey: "department",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("department")}</div>
+    ),
+    header: ({ column }) => <SortBtn column={column} label="Department" />,
+  },
+  {
     accessorKey: "email",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Email
-          <ArrowUpDown />
-        </Button>
-      );
-    },
+    header: ({ column }) => <SortBtn column={column} label="Email" />,
     cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
   },
   {
-    accessorKey: "amount",
-    header: () => <div className="text-right">Amount</div>,
-    cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("amount"));
-
-      // Format the amount as a dollar amount
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(amount);
-
-      return <div className="text-right font-medium">{formatted}</div>;
-    },
+    accessorKey: "location",
+    header: ({ column }) => <SortBtn column={column} label="Location" />,
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("location")}</div>
+    ),
+  },
+  {
+    accessorKey: "hiredAt",
+    header: "Hired At",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("hiredAt")}</div>
+    ),
   },
 ];

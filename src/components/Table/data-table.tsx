@@ -1,13 +1,13 @@
 import { flexRender, type Table as TableType } from "@tanstack/react-table";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
-import { columns, type Payment } from "./columns";
+import { columns } from "./columns";
 import { useTable } from "@/hooks/use-table";
 import TableToolbar from "./table-toolbar";
 import TablePagination from "./table-pagination";
-import { type TableProps } from "../../types/types";
+import { type TableProps, type Employee } from "@/types/types";
 import TableHeader from "./table-header";
 
-export function DataTableDemo({ data }: TableProps<Payment>) {
+export function DataTable({ data }: TableProps<Employee>) {
   const { table } = useTable({
     data,
     columns,

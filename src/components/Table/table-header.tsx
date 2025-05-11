@@ -1,6 +1,5 @@
 import { flexRender, type Table } from "@tanstack/react-table";
 import { TableRow, TableHeader as Header, TableHead } from "../ui/table";
-import React from "react";
 
 interface TableHeaderProps<TData> {
   table: Table<TData>;
@@ -29,4 +28,4 @@ const TableHeader = <TData,>({ table }: TableHeaderProps<TData>) => {
   );
 };
 
-export default React.memo(TableHeader);
+export default TableHeader;
