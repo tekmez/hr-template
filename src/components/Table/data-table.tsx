@@ -1,17 +1,12 @@
 import { flexRender, type Table as TableType } from "@tanstack/react-table";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
-import { columns } from "./columns";
-import { useTable } from "@/hooks/use-table";
 import TableToolbar from "./table-toolbar";
 import TablePagination from "./table-pagination";
-import { type TableProps, type Employee } from "@/types/types";
 import TableHeader from "./table-header";
+import { useTableContext } from "@/context/table-context";
 
-export function DataTable({ data }: TableProps<Employee>) {
-  const { table } = useTable({
-    data,
-    columns,
-  });
+export function DataTable() {
+  const { table } = useTableContext();
 
   return (
     <div className="w-full">
@@ -46,7 +41,7 @@ export function DataTable({ data }: TableProps<Employee>) {
             ) : (
               <TableRow>
                 <TableCell
-                  colSpan={columns.length}
+                  colSpan={table.getAllColumns().length}
                   className="h-24 text-center text-white"
                 >
                   No results.

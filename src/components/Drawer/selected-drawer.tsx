@@ -22,7 +22,7 @@ const SelectedDrawer = () => {
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>Selected List</DrawerTitle>
+          <DrawerTitle>Selected Employees</DrawerTitle>
         </DrawerHeader>
         <div className="px-4">
           <DrawerBody />
