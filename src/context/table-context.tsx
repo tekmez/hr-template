@@ -19,6 +19,7 @@ interface TableContextType {
   allEmployees: Employee[] | null;
   isLoadingEmployees: boolean;
   employeeError: string | null;
+  setRowSelection: (rowSelection: RowSelectionState) => void;
 }
 
 const TableContext = createContext<TableContextType | undefined>(undefined);
@@ -70,6 +71,7 @@ export const TableProvider = ({ children }: TableProviderProps) => {
     allEmployees: fetchedEmployees,
     isLoadingEmployees,
     employeeError,
+    setRowSelection,
   };
 
   return (
