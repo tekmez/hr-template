@@ -1,54 +1,59 @@
-# React + TypeScript + Vite
+# 👥 HR Employee Selector (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple HR interface built with React that allows users to view and select employees from a table. Selected employees are displayed in a slide-out panel for easy review and management.
 
-Currently, two official plugins are available:
+## Screenshots
+<img src="https://github.com/user-attachments/assets/bb399eda-db7d-4da1-8968-8533b186ddb5" alt="Alt Text" width="800" height="600">
+<img src="https://github.com/user-attachments/assets/f9a5eb25-af91-4ab7-8643-da990a13f52e" alt="Alt Text" width="800" height="600">
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🧾 **Employee Table:**  
+  Displays a list of employees in a structured table format.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🎯 **Row Interaction:**  
+  - Rows are clickable.  
+  - Clicking a row changes its background color to indicate selection.  
+  - The selected employee is added to the “Selected Employees” list.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- 🧃 **Selected Employees Panel:**  
+  - A floating selection icon is fixed at the bottom right corner.  
+  - Clicking the icon opens a **drawer panel** from the right.  
+  - Panel Title: `Selected Employees`  
+  - Displays each employee’s name, title, and department.  
+  - Allows removing individual employees or clearing the entire list.  
+  - Selected rows in the table are visually highlighted.  
+  - Removing an employee from the panel also removes their highlight in the table.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📱 Technologies Used
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **React**
+- **React Context** state management
+- **Shadcn** UI library
+- **Tailwind CSS** for rapid UI styling
+- **TypeScript** for type safety
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+
+## 🚀 Getting Started
+
+### 1. Clone the project
+   
+```bash
+   git clone https://github.com/tekmez/hr-template.git
+   ```
+
+### 2. Go to the project directory
+
+```bash
+  cd hr-template
+   ```
+### 3. Install necessary packages
+```bash
+   npm install
+   ```
+
+### 4. Start the app
+
+```bash
+    npm run dev
+   ```
