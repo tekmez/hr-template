@@ -20,9 +20,9 @@ const SelectedDrawer = () => {
           <PanelRight style={{ width: "32px", height: "32px" }} />
         </Button>
       </DrawerTrigger>
-      <DrawerContent>
+      <DrawerContent className="bg-black/70 backdrop-blur-sm border-none">
         <DrawerHeader>
-          <DrawerTitle className="text-xl font-bold">
+          <DrawerTitle className="text-xl font-bold text-white text-center">
             Selected Employees
           </DrawerTitle>
         </DrawerHeader>

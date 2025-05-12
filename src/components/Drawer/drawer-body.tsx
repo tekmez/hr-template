@@ -105,7 +105,9 @@ const DrawerBody = () => {
           })}
         </div>
       ) : (
-        <p className="text-muted-foreground">No employees selected.</p>
+        <p className="text-muted-foreground text-center">
+          No employees selected.
+        </p>
       )}
     </div>
   );
